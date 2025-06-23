@@ -5,254 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aditya Saha Babun | Portfolio</title>
   <style>
-    :root {
-      --bg: #f9f9f9;
-      --text: #222;
-      --accent: #007acc;
-      --card-bg: #fff;
-    }
-    body.dark {
-      --bg: #121212;
-      --text: #f4f4f4;
-      --accent: #66bfff;
-      --card-bg: #1e1e1e;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #333;
     }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-      z-index: 999;
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .toggle-theme {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .intro {
-      height: 100vh;
-      background: linear-gradient(135deg, var(--accent), #1e90ff);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .intro h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .intro p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .intro a {
-      margin-top: 2rem;
-      background: #fff;
-      color: var(--accent);
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    section {
+    header {
+      background: #0f172a;
+      color: white;
       padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    nav {
+      background: #1e293b;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
     }
-
-    h2.section-title {
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 5px;
+    h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
+      color: #0f172a;
     }
-
-    .tech-stack, .links {
+    .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      justify-content: center;
     }
-
     .tech-stack span {
-      padding: 6px 12px;
-      border: 1px solid var(--accent);
+      background: #e2e8f0;
+      padding: 8px 14px;
       border-radius: 20px;
       font-size: 0.9rem;
-      background: var(--card-bg);
     }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
     .project {
-      background: var(--card-bg);
-      border-radius: 10px;
+      background: white;
+      margin-bottom: 30px;
       padding: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    .project img {
-      width: 100%;
       border-radius: 8px;
-      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
     .project h3 {
-      color: var(--accent);
-      margin: 0;
+      margin-top: 0;
     }
-
+    .project p {
+      margin: 10px 0;
+    }
     .project a {
-      color: var(--accent);
+      color: #2563eb;
       text-decoration: none;
       font-weight: bold;
     }
-
-    .contact {
+    .project a:hover {
+      text-decoration: underline;
+    }
+    footer {
       text-align: center;
-      font-size: 1.1rem;
-    }
-
-    .resume {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .resume a {
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      .intro h1 {
-        font-size: 2.2rem;
-      }
+      padding: 30px;
+      background: #0f172a;
+      color: white;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>👋 Aditya Saha Babun</h1>
+    <p>IT Graduate | Full-Stack Developer | Cybersecurity & Cloud Enthusiast</p>
+  </header>
+
   <nav>
-    <div>
-      <a href="#tech">Tech Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+    <a href="#links">Links</a>
+    <a href="#stack">Tech Stack</a>
+    <a href="#projects">Projects</a>
   </nav>
 
-  <section class="intro">
-    <h1>Aditya Saha Babun</h1>
-    <p>IT Graduate • Full-Stack Developer • Cybersecurity & Cloud Enthusiast</p>
-    <a href="#projects">View My Work ↓</a>
+  <section id="links">
+    <h2>🔗 Links</h2>
+    <p><a href="https://github.com/Adibabu06" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/adityasaha06/" target="_blank">LinkedIn</a></p>
   </section>
 
-  <section id="tech">
-    <h2 class="section-title">💻 Tech Stack</h2>
+  <section id="stack">
+    <h2>💻 Tech Stack</h2>
     <div class="tech-stack">
-      <span>Python</span><span>Django</span><span>Java</span><span>C++</span>
-      <span>HTML/CSS</span><span>JavaScript</span><span>SQLite</span>
-      <span>MySQL</span><span>AWS</span><span>Unity (C#)</span>
-      <span>ASP.NET MVC</span><span>Git & GitHub</span>
+      <span>Python</span>
+      <span>Django</span>
+      <span>HTML/CSS</span>
+      <span>JavaScript</span>
+      <span>SQLite</span>
+      <span>UI/UX</span>
+      <span>Figma</span>
+      <span>Swift</span>
+      <span>Xcode</span>
+      <span>CoreData</span>
+      <span>Git</span>
+      <span>AWS</span>
+      <span>Scikit-learn</span>
+      <span>Kali Linux</span>
+      <span>Unity</span>
+      <span>C#</span>
     </div>
   </section>
 
   <section id="projects">
-    <h2 class="section-title">📂 Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="https://via.placeholder.com/300x150?text=Cybersecurity+Sim" alt="Cybersecurity" />
-        <h3>Cybersecurity Protocols Simulation</h3>
-        <p>Simulated attacks & secured system with MFA, salting. Focused on practical threat mitigation.</p>
-        <a href="https://github.com/Adibabu06/Assignment-4" target="_blank">GitHub ↗</a>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/300x150?text=Realtors" alt="Realtors" />
-        <h3>Realtors – Booking Platform</h3>
-        <p>Built with Django + SQLite. Real-time booking, admin dashboard, auth system.</p>
-        <a href="https://github.com/Adibabu06/Assignment-4" target="_blank">GitHub ↗</a>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/300x150?text=IoTBay" alt="IoTBay" />
-        <h3>IoTBay Device Catalogue</h3>
-        <p>ASP.NET MVC app with role-based access for device rentals, purchases, and admin actions.</p>
-        <a href="https://github.com/beattelljuice/IoTBay" target="_blank">GitHub ↗</a>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/300x150?text=Unity+Games" alt="Unity Game Suite" />
-        <h3>Unity Game Suite</h3>
-        <p>Pacman, Bubble POP, and NBA simulator built in Unity C# with logic and animation.</p>
-        <a href="#">Demo Private</a>
-      </div>
+    <h2>📂 Projects</h2>
+
+    <div class="project">
+      <h3>🔐 Cybersecurity Protocols Simulation</h3>
+      <p>Simulated phishing & SQL injection attacks. Implemented MFA and salting, reducing simulated breach success by 50%.</p>
+      <p><strong>Skills:</strong> Python, Wireshark, Kali Linux, MFA</p>
     </div>
+
+    <div class="project">
+      <h3>🏡 Realtors – Full-Stack Property Booking Platform</h3>
+      <p>Django app for secure property bookings with real-time notifications, CRUD admin, and responsive UI.</p>
+      <p><strong>Skills:</strong> Django, SQLite, UI/UX, Auth</p>
+    </div>
+
+    <div class="project">
+      <h3>☁️ AWS Cloud-Based LAMP Stack Deployment</h3>
+      <p>Deployed a scalable web app using EC2, RDS, ELB, Auto Scaling via Elastic Beanstalk with CI/CD.</p>
+      <p><strong>Skills:</strong> AWS, DevOps, LAMP, VPC, CI/CD</p>
+    </div>
+
+    <div class="project">
+      <h3>🛡️ Data Analytics in Cybersecurity</h3>
+      <p>Used Python and scikit-learn to detect threats from network logs through classification and anomaly detection.</p>
+      <p><strong>Skills:</strong> Python, Scikit-learn, ML, Cybersecurity</p>
+    </div>
+
+    <div class="project">
+      <h3>📱 iOS Task Manager App</h3>
+      <p>Swift-based to-do app with CoreData persistence, gesture controls, and local notifications.</p>
+      <p><strong>Skills:</strong> Swift, CoreData, Storyboard, Xcode</p>
+    </div>
+
+    <div class="project">
+      <h3>🏦 Mobile Banking App – UI/UX Prototype</h3>
+      <p>Designed Figma prototype with seamless navigation, modern UI, and user testing-based iteration.</p>
+      <p><strong>Skills:</strong> Figma, Wireframing, Usability Testing</p>
+    </div>
+
+    <div class="project">
+      <h3>🎮 Unity Game Suite</h3>
+      <p>Built Pacman, Bubble POP, and NBA stat simulator with animation, physics, and object pooling in Unity.</p>
+      <p><strong>Skills:</strong> Unity, C#, Game Dev, OOP</p>
+    </div>
+
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">📬 Contact Me</h2>
-    <div class="contact">
-      <p>Email: <a href="mailto:adityasaha2012.as@gmail.com">adityasaha2012.as@gmail.com</a></p>
-      <div class="resume">
-        <a href="resume.pdf" download>📄 Download Resume</a>
-      </div>
-    </div>
-  </section>
+  <footer>
+    &copy; 2025 Aditya Saha Babun | adibabu06.github.io
+  </footer>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
 </body>
 </html>
