@@ -4,181 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aditya Saha Babun | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      padding: 0 20px;
     }
     header {
-      background: #0f172a;
-      color: white;
-      padding: 60px 20px;
       text-align: center;
+      padding: 60px 20px 20px;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
     header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+      font-size: 18px;
+      color: #bbb;
     }
-    nav {
-      background: #1e293b;
-      padding: 10px 0;
-      text-align: center;
+    .social-icons {
+      margin-top: 20px;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+      background: #ffffff22;
+      padding: 10px;
+      border-radius: 50%;
+      transition: 0.3s;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .social-icons a:hover {
+      background: #ffffff55;
     }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #0f172a;
-    }
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tech-stack span {
-      background: #e2e8f0;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.9rem;
+    .projects {
+      max-width: 1100px;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
     .project {
-      background: white;
-      margin-bottom: 30px;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: scale(1.03);
+    }
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-content {
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .project h3 {
+    .project-content h3 {
       margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
-    .project p {
-      margin: 10px 0;
+    .project-content p {
+      color: #ccc;
+      font-size: 15px;
     }
-    .project a {
-      color: #2563eb;
+    .resume-btn {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
+      transition: background 0.3s ease;
     }
-    .project a:hover {
-      text-decoration: underline;
+    .resume-btn:hover {
+      background: #00acc1;
     }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #0f172a;
-      color: white;
-      margin-top: 50px;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>👋 Aditya Saha Babun</h1>
-    <p>IT Graduate | Full-Stack Developer | Cybersecurity & Cloud Enthusiast</p>
+    <h1>Aditya Saha Babun</h1>
+    <p>IT Graduate Turned Full-Stack Developer</p>
+    <p>Cybersecurity • Django • UI/UX • AWS • Python</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/adityasaha06/" target="_blank" title="LinkedIn">🔗</a>
+      <a href="https://github.com/Adibabu06" target="_blank" title="GitHub">💻</a>
+    </div>
+    <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
   </header>
 
-  <nav>
-    <a href="#links">Links</a>
-    <a href="#stack">Tech Stack</a>
-    <a href="#projects">Projects</a>
-  </nav>
+  <section class="projects">
+    <div class="project">
+      <img src="https://via.placeholder.com/400x180.png?text=AWS+LAMP" alt="AWS Cloud Project">
+      <div class="project-content">
+        <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
+        <p>Scalable infrastructure using VPC, EC2, RDS, Load Balancer, and CI/CD on AWS.</p>
+      </div>
+    </div>
 
-  <section id="links">
-    <h2>🔗 Links</h2>
-    <p><a href="https://github.com/Adibabu06" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/adityasaha06/" target="_blank">LinkedIn</a></p>
+    <div class="project">
+      <img src="https://via.placeholder.com/400x180.png?text=Cybersecurity" alt="Cybersecurity">
+      <div class="project-content">
+        <h3>Data Analytics in Cybersecurity</h3>
+        <p>Used ML and Python to detect anomalies in network data. Built with Scikit-Learn & Pandas.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x180.png?text=iOS+App" alt="iOS Task Manager App">
+      <div class="project-content">
+        <h3>iOS Task Manager App</h3>
+        <p>Swift & CoreData based productivity app following Apple’s Human Interface Guidelines.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x180.png?text=Realtors+App" alt="Realtors Platform">
+      <div class="project-content">
+        <h3>Realtors Booking Platform</h3>
+        <p>Django full-stack project with secure login, admin CRUD, and fast performance.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x180.png?text=Cyber+Protocols" alt="Security Sim">
+      <div class="project-content">
+        <h3>Cybersecurity Protocols Simulation</h3>
+        <p>Simulated phishing, SQLi, and brute force attacks. Used Kali Linux & MFA.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://via.placeholder.com/400x180.png?text=Mobile+Banking+UI" alt="UI Prototype">
+      <div class="project-content">
+        <h3>Mobile Banking App – UI/UX Prototype</h3>
+        <p>Figma-based clickable prototype with wireframes and usability testing.</p>
+      </div>
+    </div>
   </section>
-
-  <section id="stack">
-    <h2>💻 Tech Stack</h2>
-    <div class="tech-stack">
-      <span>Python</span>
-      <span>Django</span>
-      <span>HTML/CSS</span>
-      <span>JavaScript</span>
-      <span>SQLite</span>
-      <span>UI/UX</span>
-      <span>Figma</span>
-      <span>Swift</span>
-      <span>Xcode</span>
-      <span>CoreData</span>
-      <span>Git</span>
-      <span>AWS</span>
-      <span>Scikit-learn</span>
-      <span>Kali Linux</span>
-      <span>Unity</span>
-      <span>C#</span>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>📂 Projects</h2>
-
-    <div class="project">
-      <h3>🔐 Cybersecurity Protocols Simulation</h3>
-      <p>Simulated phishing & SQL injection attacks. Implemented MFA and salting, reducing simulated breach success by 50%.</p>
-      <p><strong>Skills:</strong> Python, Wireshark, Kali Linux, MFA</p>
-    </div>
-
-    <div class="project">
-      <h3>🏡 Realtors – Full-Stack Property Booking Platform</h3>
-      <p>Django app for secure property bookings with real-time notifications, CRUD admin, and responsive UI.</p>
-      <p><strong>Skills:</strong> Django, SQLite, UI/UX, Auth</p>
-    </div>
-
-    <div class="project">
-      <h3>☁️ AWS Cloud-Based LAMP Stack Deployment</h3>
-      <p>Deployed a scalable web app using EC2, RDS, ELB, Auto Scaling via Elastic Beanstalk with CI/CD.</p>
-      <p><strong>Skills:</strong> AWS, DevOps, LAMP, VPC, CI/CD</p>
-    </div>
-
-    <div class="project">
-      <h3>🛡️ Data Analytics in Cybersecurity</h3>
-      <p>Used Python and scikit-learn to detect threats from network logs through classification and anomaly detection.</p>
-      <p><strong>Skills:</strong> Python, Scikit-learn, ML, Cybersecurity</p>
-    </div>
-
-    <div class="project">
-      <h3>📱 iOS Task Manager App</h3>
-      <p>Swift-based to-do app with CoreData persistence, gesture controls, and local notifications.</p>
-      <p><strong>Skills:</strong> Swift, CoreData, Storyboard, Xcode</p>
-    </div>
-
-    <div class="project">
-      <h3>🏦 Mobile Banking App – UI/UX Prototype</h3>
-      <p>Designed Figma prototype with seamless navigation, modern UI, and user testing-based iteration.</p>
-      <p><strong>Skills:</strong> Figma, Wireframing, Usability Testing</p>
-    </div>
-
-    <div class="project">
-      <h3>🎮 Unity Game Suite</h3>
-      <p>Built Pacman, Bubble POP, and NBA stat simulator with animation, physics, and object pooling in Unity.</p>
-      <p><strong>Skills:</strong> Unity, C#, Game Dev, OOP</p>
-    </div>
-
-  </section>
-
-  <footer>
-    &copy; 2025 Aditya Saha Babun | adibabu06.github.io
-  </footer>
-
 </body>
 </html>
