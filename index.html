@@ -58,13 +58,31 @@
       transform: scale(1.2);
     }
 
-    .projects-section {
-      padding: 60px 20px 40px;
-      text-align: center;
+    .resume a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #00adb5;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease;
     }
 
-    .projects-section h2 {
+    .resume a:hover {
+      background: #00bfa6;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
       font-size: 2.5em;
+      text-align: center;
       margin-bottom: 40px;
       font-weight: 700;
     }
@@ -73,8 +91,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      max-width: 1200px;
-      margin: auto;
     }
 
     .project-card {
@@ -84,7 +100,6 @@
       text-align: left;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
     }
 
     .project-card:hover {
@@ -111,31 +126,18 @@
       color: #ccc;
     }
 
-    .project-card a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     .project-detail-section {
-      padding: 80px 20px;
       background-color: #16222a;
     }
 
     .project-detail {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 40px;
-      border-radius: 12px;
-      background-color: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .project-detail img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 20px;
+    .project-detail:last-child {
+      border-bottom: none;
     }
 
     .project-detail h3 {
@@ -147,29 +149,22 @@
       color: #bbb;
     }
 
-    .resume {
-      margin-top: 30px;
+    .certifications, .tech-stack {
+      background-color: #111;
+      color: #ccc;
     }
 
-    .resume a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #00adb5;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .resume a:hover {
-      background: #00bfa6;
+    .certifications h3,
+    .tech-stack h3 {
+      font-size: 1.2em;
+      color: #00adb5;
+      margin-top: 15px;
     }
 
     footer {
       text-align: center;
       padding: 40px 20px;
-      background-color: #111;
+      background-color: #000;
       color: #888;
     }
   </style>
@@ -193,39 +188,49 @@
     </div>
   </header>
 
+  <!-- Tech Stack Section -->
+  <section class="tech-stack">
+    <h2>Tech Stack & Skills</h2>
+    <p><strong>Languages:</strong> Python, Java, C++, JavaScript, HTML, CSS</p>
+    <p><strong>Frameworks:</strong> Django, Flask, React (basic), Unity (C#), JavaFX</p>
+    <p><strong>Tools:</strong> AWS, Git, GitHub, Jenkins, SQLite, MySQL, MongoDB</p>
+    <p><strong>Focus Areas:</strong> Cybersecurity, Full-Stack Apps, UI/UX Design, Cloud Deployment</p>
+  </section>
+
+  <!-- Project Cards -->
   <section class="projects-section">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <a href="#aws" class="project-card">
+      <div class="project-card">
         <img src="assets/aws.png" alt="AWS Cloud">
         <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
-        <p>Scalable infrastructure using AWS Elastic Beanstalk and custom VPC setup.</p>
-      </a>
-      <a href="#cyber" class="project-card">
+        <p>Scalable infrastructure with VPC, RDS, EC2, and Elastic Beanstalk.</p>
+      </div>
+      <div class="project-card">
         <img src="assets/cybersec.png" alt="Cybersecurity">
         <h3>Data Analytics in Cybersecurity</h3>
-        <p>ML-powered intrusion detection using Python, pandas, and scikit-learn.</p>
-      </a>
-      <a href="#ios" class="project-card">
+        <p>ML-based intrusion detection using Python and Scikit-learn.</p>
+      </div>
+      <div class="project-card">
         <img src="assets/ios.png" alt="iOS App">
         <h3>iOS Task Manager App</h3>
-        <p>Personal productivity app with CoreData, Swift, and UIKit.</p>
-      </a>
-      <a href="#realtor" class="project-card">
+        <p>Swift + CoreData based task manager app with gesture UI.</p>
+      </div>
+      <div class="project-card">
         <img src="assets/realtor.png" alt="Realtors App">
-        <h3>Realtors Booking Platform</h3>
-        <p>Full-stack Django app with login, real-time booking and admin controls.</p>
-      </a>
-      <a href="#sim" class="project-card">
-        <img src="assets/simulation.png" alt="Simulation">
+        <h3>Realtors Property Booking Platform</h3>
+        <p>Full-stack Django app for real-time booking and admin CRUD.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/simulation.png" alt="Cyber Protocols">
         <h3>Cybersecurity Protocols Simulation</h3>
-        <p>Sandboxed attack-defense lab with mitigation strategies.</p>
-      </a>
-      <a href="#bank" class="project-card">
-        <img src="assets/uiux.png" alt="Banking UI">
+        <p>Simulated phishing, SQL injection, and brute force attacks.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/uiux.png" alt="Mobile Banking">
         <h3>Mobile Banking App – UI/UX Prototype</h3>
-        <p>Designed in Figma with user testing, wireframes, and clean flows.</p>
-      </a>
+        <p>Accessible Figma prototype with heuristic testing feedback.</p>
+      </div>
     </div>
   </section>
 
