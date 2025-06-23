@@ -4,92 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aditya Saha Babun | Portfolio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap">
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      line-height: 1.6;
     }
 
     header {
+      padding: 80px 20px 20px;
       text-align: center;
-      padding: 60px 20px 30px;
     }
 
     header h1 {
-      font-size: 3em;
+      font-size: 3.2em;
+      font-weight: 800;
       margin-bottom: 10px;
     }
 
     header h2 {
       font-weight: 400;
-      margin-bottom: 15px;
+      color: #bbb;
+      margin-bottom: 10px;
     }
 
-    .tags {
-      margin-bottom: 20px;
-      font-size: 0.95em;
+    header p {
       color: #ccc;
     }
 
-    .buttons {
-      margin: 20px auto;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+    .social-icons {
+      margin-top: 20px;
     }
 
-    .buttons a {
-      text-decoration: none;
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 24px;
       color: white;
-      background: #00bcd4;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: 0.3s;
+      text-decoration: none;
+      transition: transform 0.2s ease;
     }
 
-    .buttons a:hover {
-      background: #0097a7;
+    .social-icons a:hover {
+      transform: scale(1.2);
     }
 
-    .section-title {
+    .projects-section {
+      padding: 60px 20px 40px;
       text-align: center;
+    }
+
+    .projects-section h2 {
       font-size: 2.5em;
-      margin: 60px 0 30px;
-      font-weight: 600;
+      margin-bottom: 40px;
+      font-weight: 700;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      padding: 0 40px 60px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .project-card {
-      background: #1e1e2f;
+      background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .project-card:hover {
       transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .project-card img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 15px;
+      height: 180px;
+      object-fit: cover;
+      background-color: #222;
     }
 
     .project-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.3em;
+      font-size: 1.2em;
+      margin: 10px 0 5px;
     }
 
     .project-card p {
@@ -97,108 +110,139 @@
       color: #ccc;
     }
 
-    .project-details {
-      padding: 20px 40px;
-      background: #141423;
+    .project-detail-section {
+      padding: 60px 20px;
+      background-color: #16222a;
     }
 
-    .project-details h3 {
-      color: #00bcd4;
+    .project-detail {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .project-details p {
-      color: #ddd;
-      line-height: 1.6;
-      max-width: 800px;
+    .project-detail:last-child {
+      border-bottom: none;
+    }
+
+    .project-detail h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .project-detail p {
+      color: #bbb;
+    }
+
+    .resume {
+      margin-top: 30px;
+    }
+
+    .resume a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #00adb5;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .resume a:hover {
+      background: #00bfa6;
     }
 
     footer {
       text-align: center;
-      font-size: 0.9em;
       padding: 40px 20px;
+      background-color: #111;
       color: #888;
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <h1>Aditya Saha Babun</h1>
     <h2>IT Graduate Turned Full-Stack Developer</h2>
-    <p class="tags">Cybersecurity • Django • UI/UX • AWS • Python</p>
-
-    <div class="buttons">
-      <a href="https://www.linkedin.com/in/adityasaha06/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Adibabu06" target="_blank">GitHub</a>
-      <a href="resume.pdf" download>Download Resume</a>
+    <p>Cybersecurity • Django • UI/UX • AWS • Python</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/adityasaha06/" target="_blank">🔗</a>
+      <a href="https://github.com/Adibabu06" target="_blank">🐱</a>
+    </div>
+    <div class="resume">
+      <a href="assets/Aditya_Saha_Babun_Resume.pdf" download>Download Resume</a>
     </div>
   </header>
 
-  <section>
-    <h2 class="section-title">Projects</h2>
+  <section class="projects-section">
+    <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <img src="images/aws_project.png" alt="AWS Project">
+        <img src="assets/aws.png" alt="AWS Cloud">
         <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
-        <p>Scalable infrastructure using AWS for startup simulation.</p>
+        <p>Scalable infrastructure using AWS Elastic Beanstalk and custom VPC setup.</p>
       </div>
-
       <div class="project-card">
-        <img src="images/cybersecurity.png" alt="Cybersecurity">
+        <img src="assets/cybersec.png" alt="Cybersecurity">
         <h3>Data Analytics in Cybersecurity</h3>
-        <p>Used ML for intrusion detection with Python and scikit-learn.</p>
+        <p>ML-powered intrusion detection using Python, pandas, and scikit-learn.</p>
       </div>
-
       <div class="project-card">
-        <img src="images/ios_task.png" alt="iOS Task App">
+        <img src="assets/ios.png" alt="iOS App">
         <h3>iOS Task Manager App</h3>
-        <p>Swift app for task management with CoreData and alerts.</p>
+        <p>Personal productivity app with CoreData, Swift, and UIKit.</p>
       </div>
-
       <div class="project-card">
-        <img src="images/realtor.png" alt="Realtors App">
-        <h3>Realtors – Booking Platform</h3>
-        <p>Full-stack Django app with secure booking and dashboard.</p>
+        <img src="assets/realtor.png" alt="Realtors App">
+        <h3>Realtors Property Booking Platform</h3>
+        <p>Full-stack Django web app with real-time booking and admin CRUD.</p>
       </div>
-
       <div class="project-card">
-        <img src="images/protocols.png" alt="Protocols">
+        <img src="assets/simulation.png" alt="Cyber Protocols">
         <h3>Cybersecurity Protocols Simulation</h3>
-        <p>Sandboxed simulations of 5+ attack types with mitigations.</p>
+        <p>Sandboxed environment analysis using Wireshark and Kali Linux.</p>
       </div>
-
       <div class="project-card">
-        <img src="images/uiux.png" alt="UI/UX App">
+        <img src="assets/uiux.png" alt="Mobile Banking">
         <h3>Mobile Banking App – UI/UX Prototype</h3>
-        <p>Figma prototype with modern interaction design principles.</p>
+        <p>Modern mobile UI designed and prototyped in Figma.</p>
       </div>
     </div>
   </section>
 
-  <section class="project-details">
-    <h2 class="section-title">Detailed Projects</h2>
-
-    <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
-    <p>Deployed LAMP stack with AWS services including EC2, RDS, Load Balancer, and VPC. Configured auto-scaling and CI/CD via Elastic Beanstalk for optimized startup simulation.</p>
-
-    <h3>Data Analytics in Cybersecurity</h3>
-    <p>Applied machine learning to detect anomalies in network traffic using Python, pandas, and scikit-learn. Focused on proactive threat identification.</p>
-
-    <h3>iOS Task Manager App</h3>
-    <p>Swift app for to-do management with persistent CoreData storage and Apple HIG compliance. Features include swipe gestures and reminder alerts.</p>
-
-    <h3>Realtors Booking Platform</h3>
-    <p>Django-powered web platform for real estate booking with admin tools, secure login, notifications, and responsive UI/UX.</p>
-
-    <h3>Cybersecurity Protocols Simulation</h3>
-    <p>Simulated attack vectors (phishing, brute force, SQL injection) in Kali Linux. Mitigation strategies implemented included MFA and credential hashing.</p>
-
-    <h3>Mobile Banking UI/UX Prototype</h3>
-    <p>Designed interactive prototype in Figma focused on banking tasks. Conducted user testing and implemented visual hierarchy and accessibility best practices.</p>
+  <section class="project-detail-section">
+    <div class="project-detail">
+      <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
+      <p>Deployed a LAMP stack-based web app using AWS Elastic Beanstalk and custom VPC. Implemented auto-scaling, SSH, Multi-AZ RDS, and CI/CD.</p>
+    </div>
+    <div class="project-detail">
+      <h3>Data Analytics in Cybersecurity</h3>
+      <p>Detected network anomalies using Python and ML. Built classifiers on cybersecurity datasets to identify potential threats in real-time.</p>
+    </div>
+    <div class="project-detail">
+      <h3>iOS Task Manager App</h3>
+      <p>Developed a productivity iOS app with CoreData and UIKit. Enabled local task management, UI feedback, and gesture controls.</p>
+    </div>
+    <div class="project-detail">
+      <h3>Realtors Property Booking Platform</h3>
+      <p>Django + SQLite based platform with secure user login, real-time bookings, and responsive UI. Included unit tests and admin controls.</p>
+    </div>
+    <div class="project-detail">
+      <h3>Cybersecurity Protocols Simulation</h3>
+      <p>Simulated SQL injection, brute-force, and phishing attacks. Integrated MFA, password salting, and detailed mitigation strategies.</p>
+    </div>
+    <div class="project-detail">
+      <h3>Mobile Banking App – UI/UX Prototype</h3>
+      <p>Designed with accessibility and minimalism in mind. Delivered wireframes, heuristic evaluation, and clickable Figma prototypes.</p>
+    </div>
   </section>
 
   <footer>
-    © 2025 Aditya Saha Babun. Built with 💻 and passion.
+    © 2025 Aditya Saha Babun • Built with love 💻 | Resume and projects on GitHub
   </footer>
+
 </body>
 </html>
