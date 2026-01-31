@@ -3,471 +3,1281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aditya Saha Babun | Portfolio</title>
+  <title>Aditya Saha Babun | Full-Stack Software Engineer</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Aditya Saha Babun — Sydney-based Full-Stack Software Engineer. AWS | Django/Laravel | React/Angular | REST APIs | CI/CD. Full Australian Work Rights (485)." />
+  <meta property="og:title" content="Aditya Saha Babun | Full-Stack Software Engineer" />
+  <meta property="og:description" content="AWS-hosted web apps, full-stack delivery, REST APIs, CI/CD, SQL/NoSQL. Sydney | Full Work Rights (485)." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6d28d9" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --bg0:#07060a;
+      --bg1:#0b0a12;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --muted2:rgba(255,255,255,.58);
+      --border:rgba(255,255,255,.12);
+      --accent:#8b5cf6;     /* purple */
+      --accent2:#22d3ee;    /* cyan pop */
+      --shadow:0 18px 40px rgba(0,0,0,.55);
+      --radius:16px;
+      --radius2:22px;
+      --maxw:1120px;
     }
 
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      line-height: 1.6;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(139,92,246,.25), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(34,211,238,.18), transparent 60%),
+        radial-gradient(900px 600px at 40% 95%, rgba(139,92,246,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    header {
-      padding: 80px 20px 20px;
-      text-align: center;
+    /* Skip link */
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      padding:10px 14px; background:var(--accent); border-radius:12px;
+      z-index:9999;
     }
 
-    header h1 {
-      font-size: 3.2em;
-      font-weight: 800;
-      margin-bottom: 10px;
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* Navbar */
+    .nav{
+      position:sticky; top:0; z-index:1000;
+      backdrop-filter: blur(14px);
+      background: rgba(7,6,10,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:240px;
+    }
+    .brand-badge{
+      width:34px;height:34px;border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%),
+        linear-gradient(135deg, rgba(139,92,246,1), rgba(34,211,238,.9));
+      box-shadow: 0 10px 24px rgba(139,92,246,.25);
+    }
+    .brand strong{font-weight:800;letter-spacing:.2px}
+    .brand span{color:var(--muted2);font-size:.92rem}
+
+    .nav-links{
+      display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav-links a{
+      color:var(--muted);
+      font-size:.95rem;
+      padding:8px 10px;
+      border-radius:12px;
+      transition: all .18s ease;
+    }
+    .nav-links a:hover{
+      color:#fff;
+      background: rgba(255,255,255,.06);
     }
 
-    header h2 {
-      font-weight: 400;
-      color: #bbb;
-      margin-bottom: 10px;
+    .nav-cta{
+      display:flex; align-items:center; gap:10px;
+      min-width:240px;
+      justify-content:flex-end;
     }
 
-    header p {
-      color: #ccc;
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      font-weight:700;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.2);}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(139,92,246,1), rgba(34,211,238,.95));
+      border-color: transparent;
+      box-shadow: 0 18px 34px rgba(139,92,246,.22);
+    }
+    .btn-primary:hover{transform: translateY(-2px) scale(1.01)}
+    .btn-ghost{background:transparent}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      color:var(--muted);
+      background: rgba(255,255,255,.05);
+      font-size:.92rem;
+      white-space:nowrap;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 6px rgba(34,211,238,.12);
     }
 
-    .social-icons {
+    /* Hero */
+    header.hero{
+      padding:68px 0 30px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+      .nav-cta{min-width:auto}
+    }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 260px at 10% 0%, rgba(139,92,246,.25), transparent 55%),
+        radial-gradient(600px 260px at 100% 30%, rgba(34,211,238,.18), transparent 55%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .hero-card > *{position:relative}
+    .kicker{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-bottom:14px;
+    }
+    .kicker .pill strong{color:#fff}
+    .hero h1{
+      font-size: clamp(2.05rem, 3.4vw, 3.2rem);
+      line-height:1.05;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin: 6px 0 12px;
+    }
+    .hero h1 .grad{
+      background: linear-gradient(90deg, rgba(139,92,246,1), rgba(34,211,238,1));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero p.lead{
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom:16px;
+      max-width: 68ch;
+    }
+
+    .cta-row{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin-top:14px;
+    }
+    .mini{
+      color:var(--muted2);
+      font-size:.92rem;
+      margin-top:12px;
+    }
+
+    /* Right column - proof */
+    .proof-stack{
+      display:grid;
+      grid-template-rows: auto auto 1fr;
+      gap:14px;
+      height:100%;
+    }
+    .proof-card{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
+    }
+    .proof-title{
+      display:flex; align-items:center; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .proof-title h3{font-size:1.05rem}
+    .proof-title span{color:var(--muted2);font-size:.92rem}
+    .proof-metrics{
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .metric{
+      padding:12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .metric strong{display:block; font-size:1.05rem}
+    .metric span{color:var(--muted2); font-size:.9rem}
+
+    /* Sections */
+    section{padding:34px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+    .section-head h2{
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.3px;
+    }
+    .section-head p{
+      color:var(--muted);
+      max-width: 70ch;
+      font-size: 1rem;
+    }
+
+    /* Bento grid (capabilities) */
+    .bento{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+    }
+    @media (max-width: 900px){ .bento{grid-template-columns:1fr} }
+
+    .bento-left{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 620px){ .bento-left{grid-template-columns:1fr} }
+
+    .card{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.30);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
+    }
+    .card h3{
+      font-size:1.08rem;
+      margin-bottom:8px;
+    }
+    .card p{
+      color:var(--muted);
+      font-size:.98rem;
+    }
+    .tags{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top:12px;
+    }
+    .tag{
+      font-size:.85rem;
+      color: rgba(255,255,255,.86);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .bento-right .card{height:100%}
+    .bento-right .card h3{font-size:1.15rem}
+
+    /* Experience timeline */
+    .timeline{
+      position:relative;
+      display:grid;
+      gap:14px;
+    }
+    .role{
+      display:grid;
+      grid-template-columns: 170px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 12px 26px rgba(0,0,0,.28);
+    }
+    @media (max-width: 760px){
+      .role{grid-template-columns:1fr}
+    }
+    .role .when{
+      color:var(--muted2);
+      font-size:.95rem;
+    }
+    .role h3{
+      font-size:1.12rem;
+      margin-bottom:2px;
+    }
+    .role .meta{
+      color:var(--muted);
+      font-size:.95rem;
+      margin-bottom:8px;
+    }
+    .role ul{padding-left:18px}
+    .role li{margin:6px 0; color:var(--muted)}
+
+    /* Projects */
+    .filters{
+      display:flex; gap:10px; flex-wrap:wrap; margin: 6px 0 18px;
+    }
+    .chip{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight:700;
+      font-size:.92rem;
+      cursor:pointer;
+      transition: all .18s ease;
+    }
+    .chip.active, .chip:hover{
+      color:#fff;
+      background: rgba(139,92,246,.22);
+      border-color: rgba(139,92,246,.45);
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:16px;
+    }
+    .project{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 12px 26px rgba(0,0,0,.28);
+      overflow:hidden;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      display:flex; flex-direction:column;
+      min-height: 260px;
+    }
+    .project:hover{transform: translateY(-2px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18)}
+    .thumb{
+      height: 150px;
+      background:
+        radial-gradient(400px 180px at 10% 30%, rgba(139,92,246,.40), transparent 60%),
+        radial-gradient(400px 180px at 90% 20%, rgba(34,211,238,.22), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-bottom:1px solid rgba(255,255,255,.10);
+      position:relative;
+    }
+    .thumb span{
+      position:absolute; left:14px; bottom:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      padding:6px 10px;
+      font-size:.9rem;
+    }
+    .project-body{padding:16px}
+    .project h3{font-size:1.08rem; margin-bottom:6px}
+    .project p{color:var(--muted); font-size:.96rem; margin-bottom:10px}
+    details{
+      margin-top:8px;
+      border-top: 1px dashed rgba(255,255,255,.16);
+      padding-top:10px;
+    }
+    summary{
+      cursor:pointer;
+      color: rgba(255,255,255,.9);
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .details-grid{
+      margin-top:10px;
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .kv strong{color:#fff}
+    .project-actions{
+      margin-top:auto;
+      padding:14px 16px 16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .link{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color:#fff;
+      font-weight:800;
+      font-size:.92rem;
+      transition: all .18s ease;
+    }
+    .link:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2)}
+    .link.primary{
+      background: rgba(139,92,246,.22);
+      border-color: rgba(139,92,246,.45);
+    }
+
+    /* Education + certs */
+    .two-col{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+    }
+    @media (max-width: 900px){ .two-col{grid-template-columns:1fr} }
+    .list{
+      display:grid; gap:10px;
+    }
+    .list .item{
+      padding:14px 16px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .item strong{display:block; font-size:1.03rem}
+    .item span{color:var(--muted); font-size:.95rem}
+    .certs .item strong{display:flex; align-items:center; gap:10px}
+    .badge{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:26px;height:26px;border-radius:10px;
+      background: rgba(139,92,246,.25);
+      border:1px solid rgba(139,92,246,.45);
+    }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr} }
+    .contact .card{padding:20px}
+    .contact p{color:var(--muted)}
+    .field{
+      display:grid; gap:8px; margin-top:12px;
+    }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color:#fff;
+      outline:none;
+      font-family: inherit;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{
+      border-color: rgba(139,92,246,.55);
+      box-shadow: 0 0 0 4px rgba(139,92,246,.18);
+    }
+    .contact-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    /* Footer */
+    footer{
+      padding:34px 0 50px;
+      color: rgba(255,255,255,.55);
+      text-align:center;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
       margin-top: 20px;
     }
 
-    .social-icons a {
-      display: inline-block;
-      margin: 0 10px;
-      font-size: 24px;
-      color: white;
-      text-decoration: none;
-      transition: transform 0.2s ease;
+    /* Reveal animations */
+    .reveal{opacity:0; transform: translateY(10px); transition: all .5s ease}
+    .reveal.show{opacity:1; transform: translateY(0px)}
+
+    /* Small helpers */
+    .muted{color:var(--muted)}
+    .muted2{color:var(--muted2)}
+    .sep{height:1px;background:rgba(255,255,255,.08); margin:18px 0}
+    .icon{
+      width:18px;height:18px; display:inline-block;
+      vertical-align:-3px;
+      fill: currentColor;
     }
 
-    .social-icons a:hover {
-      transform: scale(1.2);
+    /* Mobile nav */
+    .menu-btn{display:none}
+    @media (max-width: 840px){
+      .nav-links{display:none}
+      .menu-btn{display:inline-flex}
+      .nav-inner{gap:10px}
     }
-
-    .projects-section {
-      padding: 60px 20px 40px;
-      text-align: center;
+    .mobile-menu{
+      display:none;
+      padding: 0 0 14px;
     }
-
-    .projects-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      font-weight: 700;
+    .mobile-menu.open{display:block}
+    .mobile-menu a{
+      display:block;
+      padding:10px 6px;
+      color:var(--muted);
+      border-radius:12px;
     }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .project-card {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: left;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      height: 180px;
-      object-fit: cover;
-      background-color: #222;
-    }
-
-    .project-card h3 {
-      font-size: 1.2em;
-      margin: 10px 0 5px;
-    }
-
-    .project-card p {
-      font-size: 0.95em;
-      color: #ccc;
-    }
-
-    .project-card a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .project-card h3,
-.project-card p,
-.project-card:link,
-.project-card:visited,
-.project-card:hover,
-.project-card:active {
-  color: #fff;
-  text-decoration: none;
-}
-
-    .project-detail-section {
-      padding: 80px 20px;
-      background-color: #16222a;
-    }
-
-    .project-detail {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 40px;
-      border-radius: 12px;
-      background-color: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-detail img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .project-detail h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
-    .project-detail p {
-      color: #bbb;
-    }
-
-    .tech-stack,
-    .certificates-section {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .tech-stack h2,
-    .certificates-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .tech-card {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 16px 12px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .tech-card:hover {
-      transform: translateY(-5px);
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .tech-card h4 {
-      font-size: 1.1em;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #00fff2;
-    }
-
-    .certificates-section ul {
-      list-style: none;
-      padding-left: 0;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #ccc;
-      font-size: 1.05em;
-    }
-
-    .certificates-section li {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      text-align: left;
-    }
-    
-    .project-card a,
-    .project-card a h3,
-    .project-card a p {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .resume {
-      margin-top: 30px;
-    }
-
-    .resume a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #00adb5;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .resume a:hover {
-      background: #00bfa6;
-    }
-
-    .references-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.references-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-.references-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.reference-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  font-size: 1.05em;
-  color: #ccc;
-}
-
-.references-section a {
-  color: #00fff2;
-  text-decoration: none;
-}
-
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #111;
-      color: #888;
-    }
+    .mobile-menu a:hover{background: rgba(255,255,255,.06); color:#fff}
   </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div>
+            <strong>Aditya Saha Babun</strong><br/>
+            <span>Full-Stack • AWS • Sydney</span>
+          </div>
+        </div>
 
-  <header>
-    <h1>Aditya Saha Babun</h1>
-    <h2>IT Graduate Turned Full-Stack Developer</h2>
-    <p>• Cybersecurity • UI/UX • Django • AWS | Building secure, scalable, and user-focused digital solutions.</p>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/adityasaha06/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="32" height="32" />
-      </a>
-      <a href="https://github.com/Adibabu06" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="32" height="32" />
-      </a>
-    </div>
-    <div class="resume">
-      <a href="assets/resume (2).pdf" download>Download Resume</a>
-    </div>
-  </header>
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-  <section class="tech-stack">
-  <h2>Tech Stack</h2>
-  <div class="tech-grid">
-    <div class="tech-card"><h4>Python</h4>Backend & scripting</div>
-    <div class="tech-card"><h4>Java</h4>OOP & enterprise apps</div>
-    <div class="tech-card"><h4>C++</h4>Data structures & algorithms</div>
-    <div class="tech-card"><h4>JavaScript</h4>Web interactivity</div>
-    <div class="tech-card"><h4>HTML/CSS</h4>Frontend structuring</div>
-    <div class="tech-card"><h4>Django</h4>Python web framework</div>
-    <div class="tech-card"><h4>Flask</h4>Lightweight web APIs</div>
-    <div class="tech-card"><h4>React</h4>SPA UI (basic)</div>
-    <div class="tech-card"><h4>AWS</h4>Cloud deployment & VPC</div>
-    <div class="tech-card"><h4>Git/GitHub</h4>Version control</div>
-    <div class="tech-card"><h4>SQLite/MySQL</h4>Database systems</div>
-    <div class="tech-card"><h4>UI/UX</h4>Figma, design thinking</div>
-    <div class="tech-card"><h4>Unity</h4>2D & 3D game development</div>
-  </div>
-</section>
+        <div class="nav-cta">
+          <button class="btn btn-ghost menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+          <a class="btn" href="https://www.linkedin.com/in/adityasaha06/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-primary" href="assets/Aditya_Saha_Babun_Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
 
-
-
-  <section class="projects-section">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <a href="#aws" class="project-card">
-        <img src="assets/aws.png" alt="AWS Cloud">
-        <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
-        <p>Scalable infrastructure using AWS Elastic Beanstalk and custom VPC setup.</p>
-      </a>
-      <a href="#cyber" class="project-card">
-        <img src="assets/cybersec.png" alt="Cybersecurity">
-        <h3>Data Analytics in Cybersecurity</h3>
-        <p>ML-powered intrusion detection using Python, pandas, and scikit-learn.</p>
-      </a>
-      <a href="#ios" class="project-card">
-        <img src="assets/ios.png" alt="iOS App">
-        <h3>iOS Task Manager App</h3>
-        <p>Personal productivity app with CoreData, Swift, and UIKit.</p>
-      </a>
-      <a href="#realtor" class="project-card">
-        <img src="assets/realtor.png" alt="Realtors App">
-        <h3>Realtors Booking Platform</h3>
-        <p>Full-stack Django app with login, real-time booking and admin controls.</p>
-      </a>
-      <a href="#sim" class="project-card">
-        <img src="assets/simulation.png" alt="Simulation">
-        <h3>Cybersecurity Protocols Simulation</h3>
-        <p>Sandboxed attack-defense lab with mitigation strategies.</p>
-      </a>
-      <a href="#bank" class="project-card">
-        <img src="assets/uiux.png" alt="Banking UI">
-        <h3>Mobile Banking App – UI/UX Prototype</h3>
-        <p>Designed in Figma with user testing, wireframes, and clean flows.</p>
-      </a>
-      <a href="#unity-suite" class="project-card">
-        <img src="assets/unity-suite.png" alt="Unity Games">
-        <h3>Unity Game Suite</h3>
-        <p>3D & 2D games built in Unity, including Pacman, NBA Simulator, and Bubble POP.</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="project-detail-section">
-    <h2>Projects Details</h2>
-    <div id="aws" class="project-detail">
-      <img src="assets/aws.png" alt="AWS Cloud">
-      <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
-      <p><strong>Date:</strong> Apr 2025 – May 2025<br/>
-      <strong>Skills:</strong> AWS, Cloud Computing, DevOps, LAMP Stack, CI/CD<br/><br/>
-      Designed and deployed a scalable LAMP stack-based web application using AWS Academy Learner Lab. Set up a custom VPC with public/private subnets, configured EC2 for web hosting, and integrated RDS for a fault-tolerant MySQL database. Applied Elastic Load Balancer and Auto Scaling to ensure high availability. Implemented CI/CD pipelines via Elastic Beanstalk for automated version deployments. The solution emulated startup-grade scalability and operational efficiency in a real-world hosting environment.</p>
-    </div>
-
-    <div id="cyber" class="project-detail">
-      <img src="assets/cybersec.png" alt="Cybersecurity">
-      <h3>Data Analytics in Cybersecurity (Intrusion Detection)</h3>
-      <p><strong>Date:</strong> Mar 2025 – May 2025<br/>
-      <strong>Skills:</strong> Data Analytics, Scikit-Learn, Cybersecurity, Python<br/><br/>
-      Developed a machine learning-based intrusion detection system capable of identifying abnormal network behavior. Preprocessed large network traffic datasets, applied feature selection, and trained models using Naive Bayes and SVM classifiers. Achieved >90% accuracy in classifying malicious vs. benign traffic. Results were visualized with confusion matrices and ROC curves. Demonstrated how data analytics can enhance real-time threat detection in enterprise networks.</p>
-    </div>
-
-    <div id="ios" class="project-detail">
-      <img src="assets/ios.png" alt="iOS App">
-      <h3>iOS Task Manager App</h3>
-      <p><strong>Date:</strong> Mar 2024 – May 2024<br/>
-      <strong>Skills:</strong> Swift, Xcode, CoreData, UIKit<br/><br/>
-      Built a native iOS productivity app that allows users to create, categorize, and manage daily tasks with reminders. Implemented persistent local storage using CoreData and leveraged UIKit for a clean and responsive interface. Designed with MVVM pattern and implemented local notification triggers for overdue tasks. The app was tested on simulators and real devices, emphasizing UX clarity and performance.</p>
-    </div>
-
-    <div id="realtor" class="project-detail">
-      <img src="assets/realtor.png" alt="Realtor">
-      <h3>Realtors – Full-Stack Property Booking Platform</h3>
-      <p><strong>Date:</strong> Feb 2024 – Apr 2024<br/>
-      <strong>Skills:</strong> Django, SQLite, Full Stack, Responsive UI/UX<br/><br/>
-      Created a full-stack real estate booking platform using Django. Integrated user authentication, property listing, search functionality, and admin approval for new listings. Built RESTful routes and database queries using Django ORM. Implemented role-based views for customers and admins. Designed a responsive UI using Bootstrap and ensured cross-browser compatibility. Simulated real-time bookings with date locking and unit tests.
-
-</p>
-    </div>
-
-    <div id="sim" class="project-detail">
-      <img src="assets/simulation.png" alt="Cyber Simulation">
-      <h3>Cybersecurity Protocols Simulation</h3>
-      <p><strong>Date:</strong> Mar 2024<br/>
-      <strong>Skills:</strong> Wireshark, Kali Linux, MFA, Python<br/><br/>
-      Conducted simulations of real-world attack vectors including brute-force login attempts, phishing email injections, and SQLi attacks using Kali Linux. Captured and analyzed network packets using Wireshark. Introduced multi-factor authentication (MFA) and password salting as defense mechanisms. The project was documented in an audit report covering vulnerability assessment and mitigation techniques in enterprise systems.</p>
-    </div>
-
-    <div id="bank" class="project-detail">
-      <img src="assets/uiux.png" alt="UI Banking">
-      <h3>Mobile Banking App – UI/UX Prototype</h3>
-      <p><strong>Date:</strong> Aug 2023 – Oct 2023<br/>
-      <strong>Skills:</strong> Figma, Wireframing, Prototyping, UX Research<br/><br/>
-      Designed a modern mobile banking interface in Figma with a focus on user flow clarity and intuitive navigation. Conducted competitive analysis and user interviews to identify pain points. Created low- to high-fidelity wireframes and interactive prototypes for testing. Conducted usability testing with 5 users and iterated based on feedback. Delivered a polished UI kit and documentation ready for developer handoff.
-
-</p>
-    </div>
-    <div id="unity-suite" class="project-detail">
-      <img src="assets/unity-suite.png" alt="Unity Games Preview">
-      <h3>Unity Game Suite – Pacman, NBA Sim & Bubble POP</h3>
-      <p><strong>Date:</strong> Nov 2023 – Feb 2024<br/>
-        <strong>Skills:</strong> Unity (2D & 3D), C#, Game Physics, Animation, Audio Design<br/><br/>
-        Developed a series of interactive games using Unity, combining both 2D and 3D environments. Projects include:
-      <ul style="margin-top:10px; padding-left:20px; text-align:left;">
-        <li><strong>Pacman Clone:</strong> Accurate 2D recreation with looping movement, animations, and pellet logic.</li>
-        <li><strong>NBA Simulator:</strong> 3D environment simulating basketball physics, scoring mechanics, and player control.</li>
-        <li><strong>Bubble POP:</strong> Fast-paced arcade game with scoring, popping animations, and increasing difficulty.</li>
-      </ul>
-      Emphasized real-time interaction, user experience, and game logic. Implemented custom scripts, physics-based triggers, and layered audio for immersive gameplay. Built for both desktop and WebGL deployment.</p>
-    </div>
-
-  </section>
-
-  <section class="certificates-section">
-  <h2>Licenses & Certifications</h2>
-  <ul>
-    <li><strong>Frontend Fundamentals</strong> – Pirple (Issued Aug 2020)<br/>Credential ID: sjb9kc75xb</li>
-    <li><strong>Python Is Easy</strong> – Pirple (Issued Aug 2020)<br/>Credential ID: sjb9kc75xb</li>
-  </ul>
-  </section>
-
-  <section class="references-section">
-  <h2>References</h2>
-  <div class="references-grid">
-    <div class="reference-card">
-      <strong>Shakira Thasin Promi</strong><br/>
-      Shift Supervisor – Coles<br/>
-      Phone: +61 477 641 519
-    </div>
-    <div class="reference-card">
-      <strong>Toni Jones</strong><br/>
-      NSW State Operation Lead – BIG<br/>
-      Email: <a href="mailto:toni@brandinfluencegroup.com">toni@brandinfluencegroup.com</a><br/>
-      Phone: +61 421 513 220
-    </div>
-    <div class="reference-card">
-      <strong>Apurba Saha</strong><br/>
-      Business Analyst – Westpac Group<br/>
-      Phone: +61 466 882 908
+      <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="#about">About</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </div>
-</section>
+
+  <main id="main" class="container">
+
+    <!-- HERO -->
+    <header class="hero reveal">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="kicker">
+            <span class="pill"><span class="dot"></span><strong>Full Australian Work Rights</strong> (485)</span>
+            <span class="pill">AWS Certified</span>
+            <span class="pill">Currently: <strong>Full-Stack @ Wonder IT</strong></span>
+          </div>
+
+          <h1>Full-Stack <span class="grad">Software Engineer</span><br/>building cloud-ready products.</h1>
+          <p class="lead">
+            Sydney-based Graduate Full-Stack Developer delivering AWS-hosted web applications using
+            <strong>Django/Laravel</strong> and <strong>React/Angular</strong>, with <strong>REST APIs</strong>, <strong>CI/CD</strong>,
+            and <strong>SQL/NoSQL</strong> databases. I translate business requirements into scalable, tested, well-documented solutions.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn" href="assets/Aditya_Saha_Babun_Resume.pdf" download>Download Resume</a>
+            <a class="btn" href="#contact">Contact</a>
+            <a class="btn" href="https://github.com/Adibabu06" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <p class="mini">
+            Keywords recruiters search: AWS, Django, Laravel, React, Angular, TypeScript, REST APIs, CI/CD, Jenkins, MySQL, MongoDB.
+          </p>
+        </div>
+
+        <div class="proof-stack">
+          <div class="proof-card reveal">
+            <div class="proof-title">
+              <h3>Snapshot</h3>
+              <span>Recruiter view</span>
+            </div>
+            <p class="muted">
+              Full-stack delivery across cloud deployments, integrations and databases — with measurable outcomes.
+            </p>
+            <div class="proof-metrics">
+              <div class="metric">
+                <strong>3+ systems</strong>
+                <span>supported at Wonder IT</span>
+              </div>
+              <div class="metric">
+                <strong>30% faster</strong>
+                <span>data retrieval (Four Star)</span>
+              </div>
+              <div class="metric">
+                <strong>25% faster</strong>
+                <span>page load (P.N Composite)</span>
+              </div>
+              <div class="metric">
+                <strong>98% tests</strong>
+                <span>unit coverage (Realtors)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proof-card reveal">
+            <div class="proof-title">
+              <h3>Open to</h3>
+              <span>2026</span>
+            </div>
+            <p class="muted">
+              Graduate / Junior Full-Stack roles (Sydney + Remote). Interested in cloud-native apps, platforms and enterprise systems.
+            </p>
+            <div class="tags">
+              <span class="tag">Full-Stack</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Django</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">React</span>
+              <span class="tag">Angular</span>
+              <span class="tag">APIs</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+
+          <div class="proof-card reveal">
+            <div class="proof-title">
+              <h3>Quick Links</h3>
+              <span>1 click</span>
+            </div>
+            <div class="cta-row">
+              <a class="btn" href="mailto:Adityasaha2012.as@gmail.com">Email</a>
+              <button class="btn" id="copyEmailBtn" type="button">Copy Email</button>
+              <a class="btn" href="https://www.linkedin.com/in/adityasaha06/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="assets/Aditya_Saha_Babun_Resume.pdf" download>Resume</a>
+            </div>
+            <p class="mini" id="copyStatus" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2>About</h2>
+          <p>
+            Graduate Full-Stack Developer with commercial internship experience and production-style projects delivering AWS-hosted web applications using Python and JavaScript.
+            Built ERP modules, booking platforms and RESTful APIs with Django, React, SQL databases and CI/CD pipelines.
+            Proven at translating business requirements into scalable solutions, collaborating in Agile teams, and shipping well-documented, tested code.
+            AWS and Azure certified.
+          </p>
+        </div>
+        <div class="cta-row">
+          <span class="pill"><span class="dot"></span> Sydney, NSW</span>
+          <span class="pill">Work Rights: <strong>485</strong></span>
+          <span class="pill">AWS CCP</span>
+          <span class="pill">Azure Fundamentals</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section id="capabilities" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2>Capabilities</h2>
+          <p>Not just tools — what I deliver end-to-end (aligned to recruiter keywords and your job requirements).</p>
+        </div>
+      </div>
+
+      <div class="bento">
+        <div class="bento-left">
+          <div class="card reveal">
+            <h3>Full-Stack Web Applications</h3>
+            <p>Build and maintain modern web apps across front-end and back-end layers with clean UX and scalable architecture.</p>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Angular</span><span class="tag">Django</span><span class="tag">Laravel</span><span class="tag">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>REST APIs & Integrations</h3>
+            <p>Design and implement RESTful APIs, authentication flows, and third-party integrations that power business workflows.</p>
+            <div class="tags">
+              <span class="tag">REST APIs</span><span class="tag">Postman</span><span class="tag">Auth</span><span class="tag">Integrations</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Cloud & DevOps</h3>
+            <p>Deploy and operate AWS-hosted services with CI/CD pipelines and production support practices.</p>
+            <div class="tags">
+              <span class="tag">AWS</span><span class="tag">EC2</span><span class="tag">RDS</span><span class="tag">Elastic Beanstalk</span><span class="tag">Jenkins</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Databases (SQL/NoSQL)</h3>
+            <p>Design and maintain relational and NoSQL databases to support reporting and performance-critical queries.</p>
+            <div class="tags">
+              <span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Cloud SQL</span><span class="tag">DynamoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-right">
+          <div class="card reveal">
+            <h3>Engineering Practices</h3>
+            <p>
+              Strong foundation in secure coding, testing, debugging and documentation — working in Agile (Scrum/Kanban) teams.
+            </p>
+            <div class="sep"></div>
+            <p class="muted">
+              <strong>Practices:</strong> Agile delivery, unit/integration testing, technical documentation, system handover, performance optimisation.
+            </p>
+            <div class="tags">
+              <span class="tag">Agile</span><span class="tag">Secure Coding</span><span class="tag">Unit & Integration Testing</span><span class="tag">Debugging</span><span class="tag">Documentation</span>
+            </div>
+            <div class="sep"></div>
+            <p class="muted">
+              <strong>Enterprise Systems:</strong> ERP platforms, business process modelling, systems integration.
+            </p>
+            <div class="tags">
+              <span class="tag">ERP</span><span class="tag">Process Modelling</span><span class="tag">Systems Integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2>Experience</h2>
+          <p>Technical experience first (aligned to CV), followed by additional experience demonstrating reliability and communication.</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <!-- Wonder IT -->
+        <div class="role reveal">
+          <div>
+            <div class="when">Jan 2026 — Present</div>
+            <h3>Wonder IT — Full-Stack Software Engineer</h3>
+            <div class="meta">Sydney, NSW, Australia</div>
+            <div class="tags">
+              <span class="tag">AWS</span><span class="tag">Laravel</span><span class="tag">Django</span><span class="tag">Angular</span><span class="tag">React</span>
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li>Designed and delivered AWS-hosted web applications using Laravel/Django (back end) and Angular/React (front end), supporting <strong>3+ internal systems</strong> used by client-facing teams.</li>
+              <li>Built responsive, accessible UIs with JavaScript/TypeScript and implemented RESTful APIs in Python, PHP and Node.js to support core workflows.</li>
+              <li>Designed and maintained relational and NoSQL databases (MySQL, MongoDB, Cloud SQL), improving query performance and reporting reliability.</li>
+              <li>Integrated third-party APIs and enterprise platforms; contributed to Agile sprint cycles and system design discussions.</li>
+              <li>Improved production stability via automated testing, secure coding and CI/CD using Git, Bitbucket and Jenkins; supported deployments on EC2, RDS and Elastic Beanstalk.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Four Star -->
+        <div class="role reveal">
+          <div>
+            <div class="when">Jun 2022 — Dec 2022</div>
+            <h3>Four Star International Ltd. — Web Developer</h3>
+            <div class="meta">West Bengal, India</div>
+            <div class="tags">
+              <span class="tag">Web Systems</span><span class="tag">Security</span><span class="tag">Deployments</span><span class="tag">Documentation</span>
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li>Enhanced and maintained internal web systems supporting daily operations for <strong>20+ staff</strong>, improving data retrieval times by approximately <strong>30%</strong>.</li>
+              <li>Implemented role-based authentication and access-control workflows, strengthening application security and reducing unauthorised access risks.</li>
+              <li>Supported deployments and production troubleshooting across environments, cutting recurring system issues by roughly <strong>25%</strong>.</li>
+              <li>Authored technical documentation and handover guides to support ongoing maintenance and onboarding.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PN Composite -->
+        <div class="role reveal">
+          <div>
+            <div class="when">Jul 2021 — Jul 2022</div>
+            <h3>P.N Composite Ltd. — Software Developer / IT Intern</h3>
+            <div class="meta">Dhaka, Bangladesh</div>
+            <div class="tags">
+              <span class="tag">E-commerce</span><span class="tag">Full-Stack</span><span class="tag">SQL</span><span class="tag">Performance</span>
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li>Led development of a full-featured e-commerce website across <strong>10+ pages</strong>, owning both front-end and back-end delivery.</li>
+              <li>Designed responsive UI/UX using HTML, CSS and JavaScript to improve engagement and support customer acquisition.</li>
+              <li>Built SQL-backed systems to manage products, orders and reporting while optimising performance to reduce page-load times by approximately <strong>25%</strong>.</li>
+              <li>Partnered with marketing and operations teams via Git-based workflows to ship iterative releases and maintain documentation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- Additional experience -->
+        <div class="section-head">
+          <div>
+            <h2 style="font-size:1.35rem">Additional Experience</h2>
+            <p class="muted">Demonstrates customer communication, reliability, teamwork and execution.</p>
+          </div>
+        </div>
+
+        <div class="role reveal">
+          <div>
+            <div class="when">Sep 2024 — Present</div>
+            <h3>Brand Influence Group (BIG) — Merchandiser</h3>
+            <div class="meta">Sydney, NSW, Australia</div>
+          </div>
+          <div>
+            <ul>
+              <li>Executed visual merchandising strategies across <strong>10+ retail locations</strong>, driving an average <strong>15%</strong> uplift in promotional sales.</li>
+              <li>Collaborated with marketing and design teams to ensure <strong>100%</strong> brand alignment across in-store displays.</li>
+              <li>Analysed market trends and curated assortments, reducing overstock by <strong>20%</strong> and improving turnover.</li>
+              <li>Optimised floor layouts to increase visibility and boost customer engagement by <strong>30%</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="role reveal">
+          <div>
+            <div class="when">Jul 2024 — Sep 2024</div>
+            <h3>Coles Supermarket — Customer Service / Christmas Casual</h3>
+            <div class="meta">Sydney, NSW, Australia</div>
+          </div>
+          <div>
+            <ul>
+              <li>Supported <strong>300+ customer interactions</strong> per shift during peak holiday periods while maintaining smooth store operations.</li>
+              <li>Resolved customer enquiries efficiently, contributing to a <strong>15%</strong> improvement in customer service satisfaction scores.</li>
+              <li>Handled restocking and POS operations to reduce checkout wait times and support sales cycles.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2>Projects</h2>
+          <p>Case-study style highlights aligned to your CV: cloud, full-stack apps, ERP, security analytics, mobile and Unity.</p>
+        </div>
+      </div>
+
+      <div class="filters" aria-label="Project filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="cloud">Cloud</button>
+        <button class="chip" data-filter="fullstack">Full-Stack</button>
+        <button class="chip" data-filter="erp">ERP</button>
+        <button class="chip" data-filter="security">Security</button>
+        <button class="chip" data-filter="mobile">Mobile</button>
+        <button class="chip" data-filter="unity">Unity</button>
+      </div>
+
+      <div class="projects" id="projectsGrid">
+
+        <!-- AWS -->
+        <article class="project reveal" data-tags="cloud">
+          <div class="thumb"><span>Cloud</span></div>
+          <div class="project-body">
+            <h3>AWS Cloud-Based LAMP Stack Deployment</h3>
+            <p>Architected multi-AZ infrastructure on AWS using VPC, EC2, RDS and Load Balancers; CI/CD-style deployments via Elastic Beanstalk.</p>
+
+            <details>
+              <summary>View case study</summary>
+              <div class="details-grid">
+                <div class="kv"><strong>Problem:</strong> Deploy a scalable web app with strong availability and security constraints.</div>
+                <div class="kv"><strong>Solution:</strong> Custom VPC, public/private subnets, EC2, RDS (Multi-AZ), load balancing and auto-scaling; release workflow via Elastic Beanstalk.</div>
+                <div class="kv"><strong>Impact:</strong> Delivered under budget/performance constraints while meeting availability requirements.</div>
+                <div class="kv"><strong>Tech:</strong> AWS (VPC, EC2, RDS, ELB, Auto Scaling, Elastic Beanstalk), Linux, CI/CD</div>
+              </div>
+            </details>
+
+            <div class="tags">
+              <span class="tag">AWS</span><span class="tag">VPC</span><span class="tag">EC2</span><span class="tag">RDS</span><span class="tag">Elastic Beanstalk</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a class="link primary" href="#contact">Request Architecture Walkthrough</a>
+            <a class="link" href="assets/Aditya_Saha_Babun_Resume.pdf" download>Resume</a>
+          </div>
+        </article>
+
+        <!-- Realtors -->
+        <article class="project reveal" data-tags="fullstack">
+          <div class="thumb"><span>Full-Stack</span></div>
+          <div class="project-body">
+            <h3>Realtors — Property Booking Platform (Django)</h3>
+            <p>Full-stack Django platform with secure auth, booking workflow, admin CRUD and notifications — tested and performance focused.</p>
+
+            <details>
+              <summary>View case study</summary>
+              <div class="details-grid">
+                <div class="kv"><strong>Problem:</strong> Build a reliable booking workflow with admin management and responsive UX.</div>
+                <div class="kv"><strong>Solution:</strong> Secure login, booking flows, admin CRUD, notifications and clean UI across devices.</div>
+                <div class="kv"><strong>Impact:</strong> Achieved <strong>98%</strong> unit test coverage and maintained <strong>sub-500ms</strong> page response times.</div>
+                <div class="kv"><strong>Tech:</strong> Django, SQLite, Python, Testing</div>
+              </div>
+            </details>
+
+            <div class="tags">
+              <span class="tag">Django</span><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Testing</span><span class="tag">Responsive UI</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a class="link primary" href="#contact">Ask for Demo</a>
+            <a class="link" href="https://github.com/Adibabu06" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <!-- ERP -->
+        <article class="project reveal" data-tags="erp">
+          <div class="thumb"><span>ERP</span></div>
+          <div class="project-body">
+            <h3>ERP Platform (Textile Domain) — Academic Industry Project</h3>
+            <p>Mapped ERP workflows and translated business needs into functional modules with documentation and testing notes for handover.</p>
+
+            <details>
+              <summary>View case study</summary>
+              <div class="details-grid">
+                <div class="kv"><strong>Problem:</strong> Understand textile ERP operations and build software modules aligned to real workflows.</div>
+                <div class="kv"><strong>Solution:</strong> Requirements mapping for inventory, procurement, production tracking and reporting; delivered database-backed features.</div>
+                <div class="kv"><strong>Impact:</strong> Supported stakeholder demos and operational handover with clear workflow documentation and test notes.</div>
+                <div class="kv"><strong>Tech:</strong> Full-stack contribution, databases, documentation</div>
+              </div>
+            </details>
+
+            <div class="tags">
+              <span class="tag">ERP</span><span class="tag">Workflows</span><span class="tag">Databases</span><span class="tag">Documentation</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a class="link primary" href="#contact">Discuss ERP Workflows</a>
+            <a class="link" href="assets/Aditya_Saha_Babun_Resume.pdf" download>Resume</a>
+          </div>
+        </article>
+
+        <!-- Cybersecurity -->
+        <article class="project reveal" data-tags="security">
+          <div class="thumb"><span>Security</span></div>
+          <div class="project-body">
+            <h3>Data Analytics in Cybersecurity — Intrusion Detection</h3>
+            <p>Processed network datasets and built anomaly detection models to flag suspicious traffic, reporting metrics and insights.</p>
+
+            <details>
+              <summary>View case study</summary>
+              <div class="details-grid">
+                <div class="kv"><strong>Problem:</strong> Detect abnormal network behaviour to support proactive security monitoring.</div>
+                <div class="kv"><strong>Solution:</strong> Data preprocessing with pandas and baseline models in scikit-learn to identify anomalies.</div>
+                <div class="kv"><strong>Impact:</strong> Reported model evaluation metrics and insights to support threat detection use cases.</div>
+                <div class="kv"><strong>Tech:</strong> Python, pandas, scikit-learn</div>
+              </div>
+            </details>
+
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">Security</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a class="link primary" href="#contact">Ask for Report</a>
+            <a class="link" href="https://github.com/Adibabu06" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <!-- iOS -->
+        <article class="project reveal" data-tags="mobile">
+          <div class="thumb"><span>Mobile</span></div>
+          <div class="project-body">
+            <h3>iOS Task Manager App (Swift, CoreData)</h3>
+            <p>Native iOS app with CRUD task flows, CoreData persistence and local notifications built in Xcode.</p>
+
+            <details>
+              <summary>View case study</summary>
+              <div class="details-grid">
+                <div class="kv"><strong>Problem:</strong> Build a simple, reliable productivity tool with persistence and reminders.</div>
+                <div class="kv"><strong>Solution:</strong> CRUD flows, CoreData storage, local notifications, clean UI.</div>
+                <div class="kv"><strong>Tech:</strong> Swift, CoreData, Xcode</div>
+              </div>
+            </details>
+
+            <div class="tags">
+              <span class="tag">Swift</span><span class="tag">CoreData</span><span class="tag">Xcode</span><span class="tag">iOS</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a class="link primary" href="#contact">Ask for Screens</a>
+            <a class="link" href="https://github.com/Adibabu06" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Unity -->
+        <article class="project reveal" data-tags="unity">
+          <div class="thumb"><span>Unity</span></div>
+          <div class="project-body">
+            <h3>Unity Game Suite (C#)</h3>
+            <p>Created three interactive 2D games using modular OOP, collision detection and animation systems.</p>
+
+            <details>
+              <summary>View case study</summary>
+              <div class="details-grid">
+                <div class="kv"><strong>Includes:</strong> Pacman, Bubble POP, NBA Simulator</div>
+                <div class="kv"><strong>Focus:</strong> Game loop mechanics, collision detection, animation, modular OOP structure.</div>
+                <div class="kv"><strong>Tech:</strong> Unity, C#</div>
+              </div>
+            </details>
+
+            <div class="tags">
+              <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">OOP</span><span class="tag">Gameplay Systems</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a class="link primary" href="#contact">Ask for Build</a>
+            <a class="link" href="https://github.com/Adibabu06" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="mini muted" style="margin-top:14px;">
+        Note: Live demos / repos can be linked per project when available. Recruiters can request architecture walkthroughs via the contact form.
+      </p>
+    </section>
+
+    <!-- EDUCATION + CERTS -->
+    <section id="education" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2>Education & Certifications</h2>
+          <p>Academic foundation plus cloud credentials aligned to full-stack roles.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="list reveal">
+          <div class="item">
+            <strong>University of Technology Sydney (UTS)</strong>
+            <span>Bachelor of Science in Information Technology — Major: Enterprise Management Systems | Grade: Distinction</span>
+          </div>
+        </div>
+
+        <div class="list certs reveal">
+          <div class="item">
+            <strong><span class="badge">☁</span> AWS Certified Cloud Practitioner</strong>
+            <span>Cloud fundamentals • AWS services • security & best practices</span>
+          </div>
+          <div class="item">
+            <strong><span class="badge">AI</span> Microsoft Certified: Azure Fundamentals</strong>
+            <span>Cloud concepts • Azure services • governance</span>
+          </div>
+          <div class="item">
+            <strong><span class="badge">IT</span> CompTIA IT Fundamentals (ITF+)</strong>
+            <span>IT fundamentals • infrastructure • software</span>
+          </div>
+          <div class="item">
+            <strong><span class="badge">MS</span> Microsoft AI Skills for Students</strong>
+            <span>AI fundamentals • responsible AI concepts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+          <p>Fastest way: email or LinkedIn. If you’re hiring, I’m happy to share project walkthroughs, screenshots, and code samples.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="card reveal">
+          <h3>Reach out</h3>
+          <p class="muted">
+            Sydney, NSW • Full Australian Work Rights (Temporary Graduate Visa 485)<br/>
+            Email: <a class="muted" href="mailto:Adityasaha2012.as@gmail.com"><strong>Adityasaha2012.as@gmail.com</strong></a>
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:Adityasaha2012.as@gmail.com?subject=Full-Stack%20Role%20Inquiry%20-%20Aditya%20Saha%20Babun">Email Me</a>
+            <a class="btn" href="https://www.linkedin.com/in/adityasaha06/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/Adibabu06" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="assets/Aditya_Saha_Babun_Resume.pdf" download>Resume</a>
+          </div>
+
+          <div class="sep"></div>
+          <p class="muted2">
+            <strong>References:</strong> Recommendations available upon request (via LinkedIn / professional contacts).
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Quick message</h3>
+          <p class="muted">This form opens your email app with a prefilled message (simple GitHub Pages friendly).</p>
+
+          <div class="field">
+            <label class="muted2" for="name">Your name</label>
+            <input id="name" type="text" placeholder="e.g., Sarah (Recruiter)" autocomplete="name"/>
+          </div>
+          <div class="field">
+            <label class="muted2" for="email">Your email</label>
+            <input id="email" type="email" placeholder="e.g., sarah@company.com" autocomplete="email"/>
+          </div>
+          <div class="field">
+            <label class="muted2" for="msg">Message</label>
+            <textarea id="msg" placeholder="Hi Aditya, we'd like to discuss a Full-Stack role..."></textarea>
+          </div>
+
+          <div class="contact-actions">
+            <button class="btn btn-primary" id="sendMsgBtn" type="button">Send</button>
+            <button class="btn" id="clearBtn" type="button">Clear</button>
+          </div>
+          <p class="mini muted2">Tip: Keep your resume PDF at <code>assets/Aditya_Saha_Babun_Resume.pdf</code></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    © 2025 Aditya Saha Babun • Built with love 💻 | Resume and projects on GitHub
+    © <span id="year"></span> Aditya Saha Babun • Built for recruiters • AWS • Full-Stack • Sydney
   </footer>
+
+  <script>
+    // ====== Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ====== Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    }
+
+    // ====== Copy email
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const copyStatus = document.getElementById('copyStatus');
+    const EMAIL = "Adityasaha2012.as@gmail.com";
+    if(copyBtn){
+      copyBtn.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(EMAIL);
+          copyStatus.textContent = "Copied email to clipboard ✅";
+          setTimeout(() => copyStatus.textContent = "", 2200);
+        }catch(e){
+          copyStatus.textContent = "Copy failed — you can copy manually: " + EMAIL;
+        }
+      });
+    }
+
+    // ====== Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ====== Project filters
+    const chips = document.querySelectorAll('.chip');
+    const projects = document.querySelectorAll('.project');
+
+    function setFilter(filter){
+      chips.forEach(c => c.classList.toggle('active', c.dataset.filter === filter));
+      projects.forEach(p => {
+        const tags = (p.getAttribute('data-tags') || "").split(' ');
+        const show = (filter === 'all') || tags.includes(filter);
+        p.style.display = show ? 'flex' : 'none';
+      });
+    }
+    chips.forEach(chip => chip.addEventListener('click', () => setFilter(chip.dataset.filter)));
+
+    // ====== Contact form -> mailto
+    const sendBtn = document.getElementById('sendMsgBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function enc(s){ return encodeURIComponent(s || ""); }
+
+    if(sendBtn){
+      sendBtn.addEventListener('click', () => {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const msg = document.getElementById('msg').value.trim();
+
+        const subject = `Portfolio inquiry — ${name || "Recruiter"}`;
+        const body =
+`Hi Aditya,
+
+${msg || "I'd like to discuss a Full-Stack opportunity with you."}
+
+--- 
+From: ${name || "[Name]"}
+Email: ${email || "[Email]"}
+`;
+
+        window.location.href = `mailto:${EMAIL}?subject=${enc(subject)}&body=${enc(body)}`;
+      });
+    }
+
+    if(clearBtn){
+      clearBtn.addEventListener('click', () => {
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('msg').value = "";
+      });
+    }
+  </script>
 </body>
 </html>
